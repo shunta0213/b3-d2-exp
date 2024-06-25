@@ -3,4 +3,106 @@
 
 \section{結果}
 
+\subsection{実験1}
+アモルファス太陽電池とシリコンフォトダイオードのそれぞれに、実験室の照明(蛍光灯)下・蓋をして光を遮った状態(暗時)・LEDライトを直接照射したとき・MAGライトを直接照射ときの4パターンで電流と電圧の変化を測定した。
+測定した最大の電流と電圧の結果を表\ref{tab:exp1}に示す。
+\input{src/tables/exp1.tex}
+
+\subsection{実験2}\label{subsec:exp2}
+Variable Power Supply(以後VPS)を用いて\SI{0}{A}から、\SI{12}{A}間の設定電流に対してその出力をDegital Multimeter(以後DMM)で測定した。
+その結果を表\ref{tab:exp2}に示す。
+また、これを元にグラフにすると図\ref{fig:exp2}のようになる。
+\input{src/tables/exp2.tex}
+\input{src/figures/exp2/vps-dmm.tex}
+
+\subsection{実験3}
+\ref{subsec:exp2}の状態から、VPSの出力を\SI{10}{k\ohm}の抵抗に接続しそれをオペアンプを負側の入力に接続した。
+回路図を図\ref{fig:exp3-circuit}に示す。
+\input{src/figures/exp3/circuit.tex}
+\ref{subsec:exp2}で測定したVPSの値を元に、\SI{0}{A}から\SI{12}{A}まで\SI{1}{A}刻みで変化させたときのオペアンプの出力を測定した。
+また、VPSの出力を繋いだ抵抗の値を\SI{1}{k\ohm}に変更して、特に\SI{0}{A}から\SI{2}{A}までの間でオペアンプの出力を測定した。
+この結果をそれぞれ表\ref{tab:exp3-10k}と表\ref{tab:exp3-1k}に示す。
+これを元にグラフにしたものを図\ref{fig:exp3}に示す。
+\input{src/tables/exp3-10k.tex}
+\input{src/tables/exp3-1k.tex}
+\input{src/figures/exp3/vps-op-amp.tex}
+
+\subsection{実験4}
+太陽電池、フォトダイオードをオペアンプに入力しその出力にオシロスコープを接続し、LEDライトとMAGライトを点滅させたときの出力波形を撮影した。
+また、太陽電池の実験室の照明(蛍光灯)下で出力波形を撮影した。
+回路図の概略を図\ref{fig:exp4-circuit}に示す。
+\input{src/figures/exp4/curcuit.tex}
+撮影した画像は\ref{fig:exp4-led}と\ref{fig:exp4-f-lamp}に示す。
+LEDライトの点滅に対して太陽電池、フォトダイオードともにすぐに反応し矩形波状の波形が得られた。
+図\ref{fig:exp4-led}から、LEDの波形の最大値は\SI{1.524}{V}、フォトダイオードは\SI{472.45}{mV}であった。
+蛍光灯のもとでの太陽電池の出力波形は図\ref{fig:exp4-f-lamp}であり、周期的な波形が得られた。
+
+\subsection{実験5}\label{subsec:exp5}
+Function Generatorを用いて、オシロスコープのCH0に入力し正弦波・三角波・矩形波を表示させた。
+正しく表示されたことを確認した。
+次に、Function Generatorの出力を正弦波にして\SI{10}{k\ohm}または\SI{1}{k\ohm}の抵抗を介してオペアンプに接続しその出力をオシロスコープのCH1に入力した。
+回路図を図\ref{fig:exp5-circuit}に示す。
+撮影した波形は図\ref{fig:exp5-raw}に示す。
+入力・出力の波形はどちらの場合でも正弦波状であった。
+図\ref{fig:exp5-raw-10k}では、入力の振幅が\SI{1.027}{V}に対し出力の振幅は\SI{1.059}{V}であった。
+図\ref{fig:exp5-raw-1k}では、入力の振幅が\SI{1.027}{V}に対し出力の振幅は\SI{9.876}{V}となった。
+\input{src/figures/exp5/curcuit.tex}
+
+\subsection{実験6}
+\ref{subsec:exp5}で接続していた抵抗$R$を\SI{0.1}{\micro\farad}のコンデンサに変更し、積分回路を作成した。
+オペアンプの出力波形を測定した。
+回路図の概略を図\ref{fig:exp6-circuit}に示す。
+\input{src/figures/exp6/curcuit.tex}
+この状態で\SI{20}{Hz}の矩形波を入力し、出力波形を観察した。
+さらに、コンデンサに対して\SI{1}{M\ohm}の抵抗を接続し、\SI{20}{Hz}の矩形波・正弦波・三角波を入力し出力波形を観察した。
+回路図は図\ref{fig:exp6-circuit-2}に示す。
+撮影した画像は図\ref{fig:exp6-raw}に示す。
+不完全積分回路に対して、矩形波を入力をした時は一定の部分で単調増加するような三角波の波形が得られた。
+正弦波を入力したときは位相がずれた正弦波の出力が得られた。
+三角波を入力したときは、正弦波のような波形が得られた。
+積分回路と不完全積分回路に矩形波を入力した場合で比較すると、積分回路の方が出力された三角波状の波形が負側にずれている一方で、不完全積分回路ではほぼ振動中心は0に近い部分になっている。
+
+\subsection{実験7}
+図\ref{fig:exp7-circuit}に示すような加算回路を作成した。
+\input{src/figures/exp7/curcuit.tex}
+$V_1$、$V_2$として一方にはFunction Generatorから\SI{20}{Hz}の正弦波を入力し、もう一方にはVPSから\SI{0}{V}、\SI{1}{V}、\SI{2}{V}と変化させその波形を撮影した。
+撮影した波形は図\ref{fig:exp7-raw}に示す。
+VPSの電流を大きくするにつれて、出力波形は負側にシフトしていっていることがわかる。
+VPSが\SI{0}{V}のとき、図\ref{fig:exp7-raw-0}より入力波形と出力波形は反転しているが、振幅は\SI{1.070}{V}と{1.059}{V}、振動数は\SI{19.898}{Hz}と\SI{19.867}{Hz}でほぼ一致している。
+\SI{1}{V}のとき、図\ref{fig:exp7-raw-1}より出力波形の最大値が入力波形の最小値でありおおよそ\SI{1}{V}負側にシフトしているとわかる。
+
+
+\subsection{実験8}\label{subsec:exp8}
+図\ref{fig:exp8-circuit}に示すローパスフィルターを作成した。
+\input{src/figures/exp8/circuit.tex}
+この回路に対して、Function Generatorからさまざまな周波数の正弦波を入力し、出力波形をオシロスコープで観察した。
+周波数が大きくなるにつれ出力波形の振幅が小さくなっていった。
+振幅が$1/\sqrt{2}=0.707$倍になる周波数は\SI{170}{Hz}でありその時の波形を図\ref{fig:exp8-raw-cutoff}に示す。
+Bode Analayzerを用いてこの回路に\SI{1}{Hz}から\SI{100}{kHz}までの周波数の正弦波を入力し、ボード線図を作成した。
+$R_1=\SI{10}{k\ohm}$と\SI{1}{M\ohm}の場合で比較したものを図\ref{fig:exp8-bode}に示す。
+
+\subsection{実験9}\label{subsec:exp9}
+まず今まで使用してきたオペアンプとは異なるオペアンプ2を用いて、図\ref{fig:exp9-circuit}に示すようなローパスフィルターを作成した。
+\ref{subsec:exp8}と同様にBode Analayzerを用いてこの回路に\SI{1}{Hz}から\SI{100}{kHz}までの周波数の正弦波を入力し、ボード線図を作成した。
+その後上記の回路と\ref{subsec:exp8}での回路を繋げ、ローパスフィルターを継続接続した図\ref{fig:exp9-circuit2}の回路を作成した。
+\input{src/figures/exp9/circuit.tex}
+それぞれの回路でのボード線図を図\ref{fig:exp9-bode}に示す。
+
+\subsection{実験10}
+\ref{subsec:exp9}の作成した回路から、図\ref{fig:exp10-circuit}に示すバイカット型フィルタを作成した。
+\input{src/figures/exp10/circuit.tex}
+図中の$R_1$\SI{10}{k\ohm}でそれぞれ\SI{1}{Hz}から\SI{100}{kHz}までの周波数の正弦波を入力し
+一番左のオペアンプの出力(反転ローパスフィルタの出力)と、一番右のオペアンプの出力(反転バンドパスフィルタの出力)の2つでボード線図を作成した。
+その後、$R_1$を\SI{5}{k\ohm}、\SI{7}{k\ohm}、\SI{20}{k\ohm}のそれぞれで反転バンドパスフィルタの出力でボード線図を作成した。
+撮影したボード線図の写真を図\ref{fig:exp10-bode}に示す。
+
+次に反転バンドパスフィルタの出力にオシロスコープを繋げ、入力として矩形波を入力したときの波形を撮影した。
+$R_1$を\SI{5}{k\ohm}、\SI{7}{k\ohm}、\SI{10}{k\ohm}、\SI{20}{k\ohm}のそれぞれで撮影した。
+この撮影した写真を図\ref{fig:exp10-band-sq}に示す。
+次に$R_1=\SI{20}{k\ohm}$として正弦波を入力し、\SI{20}{Hz}から\SI{180}{Hz}まで\SI{40}{Hz}刻みで変化させたときの出力波形を撮影した。
+この撮影した写真を図\ref{fig:exp10-sin}に示す。
+
+
+
+
 \end{document}
