@@ -1,13 +1,20 @@
+%Please add the following packages if necessary:
+%\usepackage{booktabs, multirow} % for borders and merged ranges
+%\usepackage{soul}% for underlines
+%\usepackage[table]{xcolor} % for cell colors
+%\usepackage{changepage,threeparttable} % for wide tables
+%If the table is too wide, replace \begin{table}[!htp]...\end{table} with
+%\begin{adjustwidth}{-2.5 cm}{-2.5 cm}\centering\begin{threeparttable}[!htb]...\end{threeparttable}\end{adjustwidth}
 \begin{table}[!htp]\centering
-	\caption{さまざまな光源下における太陽電池とフォトダイオードの電流・電圧}\label{tab:exp1}
+	\caption{さまざまな光源下での電流・電圧}\label{tab:exp1}
 	\scriptsize
-	\begin{tabular}{cccc}\toprule
-		\multicolumn{2}{c}{太陽電池} & \multicolumn{2}{c}{フォトダイオード}                             \\\cmidrule{1-4}
-		電流 / \si{A}              & 電圧 / \si{V}                  & 電流 / \si{A} & 電圧 / \si{V} \\\midrule
-		0.00017                  & 2.7621                       & 0.00002     & 0.30601     \\
-		0.00003                  & 1.9265                       & 0.00001     & 0.23010     \\
-		0.00127                  & 3.2019                       & 0.00037     & 0.46318     \\
-		0.00038                  & 2.9753                       & 0.00769     & 0.58717     \\
+	\begin{tabular}{ccccc}\toprule
+		       & \multicolumn{2}{c}{太陽電池} & \multicolumn{2}{c}{フォトダイオード}                     \\\cmidrule{2-5}
+		       & A                        & V                            & A       & V       \\\midrule
+		蛍光灯下   & 0.00017                  & 2.7621                       & 0.00002 & 0.30601 \\
+		暗時     & 0.00003                  & 1.9265                       & 0.00001 & 0.23010 \\
+		LEDライト & 0.00127                  & 3.2019                       & 0.00037 & 0.46318 \\
+		MAGライト & 0.00038                  & 2.9753                       & 0.00769 & 0.58717 \\
 		\bottomrule
 	\end{tabular}
 \end{table}

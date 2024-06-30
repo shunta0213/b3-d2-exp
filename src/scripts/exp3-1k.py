@@ -1,3 +1,4 @@
+import numpy as np
 import matplotlib.pyplot as plt
 import scienceplots
 
@@ -9,6 +10,8 @@ plt.rcParams["font.size"] = 16
 # データの定義
 vps_setting_current = [0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2]
 resistor_current = [1.9330, 1.9170, 3.9645, 5.9045, 7.9931, 10.065, 11.988, 13.170, 13.182, 13.181, 13.180]
+resistor_current = np.array(resistor_current)
+resistor_current = -resistor_current
 
 # グラフの作成
 plt.figure(figsize=(10, 6))
